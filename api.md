@@ -93,3 +93,26 @@ curl -H "Host: www.producthunt.com"
 	"query": "mutation SaveUpcomingPage($input:UpdateUpcomingPageInput!$reloadVariant:Boolean!){response:updateUpcomingPage(input:$input){node{id ...UpcomingPageLayoutControlsForm variant(preferredKind:\"b\")@include(if:$reloadVariant){id __typename}__typename}errors{field messages __typename}__typename}}fragment UpcomingPageLayoutControlsForm on UpcomingPage{id accountId angellistUrl appStoreUrl availableTemplateNames canManageShipAb canPromoteUpcomingPage facebookUrl hiring name playStoreUrl privacyPolicyUrl seoDescription seoImageUuid seoTitle slug status subscriberCount successText tagline thumbnailUuid topicIds twitterUrl updatedAt webhookUrl websiteUrl widgetIntroMessage variants{id backgroundColor backgroundImageUuid brandColor kind logoUuid templateName thumbnailUuid unsplashBackgroundUrl whatText whoText whyText media{...Media __typename}__typename}...MetaTags __typename}fragment Media on Media{imageUuid mediaType originalWidth originalHeight metadata{url platform videoId __typename}__typename}fragment MetaTags on SEOInterface{id meta{canonicalUrl creator description image mobileAppUrl oembedUrl robots title type author authorUrl __typename}__typename}"
 }
 ```
+```json
+{
+	"operationName": "SaveUpcomingPage",
+	"variables": {
+		"input": {
+			"name": "Landing.Page.as",
+			"tagline": "Instant Landing Pages hosted on GitHub Pages",
+			"thumbnailUuid": null,
+			"hiring": false,
+			"websiteUrl": "https://landing.page.as",
+			"appStoreUrl": null,
+			"playStoreUrl": null,
+			"facebookUrl": null,
+			"twitterUrl": "https://twitter.com/nateclev",
+			"angellistUrl": null,
+			"privacyPolicyUrl": null,
+			"upcomingPageId": "196139"
+		},
+		"reloadVariant": false
+	},
+	"query": "mutation SaveUpcomingPage($input:UpdateUpcomingPageInput!$reloadVariant:Boolean!){response:updateUpcomingPage(input:$input){node{id ...UpcomingPageLayoutControlsForm variant(preferredKind:\"b\")@include(if:$reloadVariant){id __typename}__typename}errors{field messages __typename}__typename}}fragment UpcomingPageLayoutControlsForm on UpcomingPage{id accountId angellistUrl appStoreUrl availableTemplateNames canManageShipAb canPromoteUpcomingPage facebookUrl hiring name playStoreUrl privacyPolicyUrl seoDescription seoImageUuid seoTitle slug status subscriberCount successText tagline thumbnailUuid topicIds twitterUrl updatedAt webhookUrl websiteUrl widgetIntroMessage variants{id backgroundColor backgroundImageUuid brandColor kind logoUuid templateName thumbnailUuid unsplashBackgroundUrl whatText whoText whyText media{...Media __typename}__typename}...MetaTags __typename}fragment Media on Media{imageUuid mediaType originalWidth originalHeight metadata{url platform videoId __typename}__typename}fragment MetaTags on SEOInterface{id meta{canonicalUrl creator description image mobileAppUrl oembedUrl robots title type author authorUrl __typename}__typename}"
+}
+```
