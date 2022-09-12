@@ -43,3 +43,21 @@ curl -H "Host: www.producthunt.com"
 	"query": "mutation UpcomingPageCreate($input:UpcomingPageCreateInput!){response:upcomingPageCreate(input:$input){node{id slug __typename}errors{field messages __typename}__typename}}"
 }
 ```
+
+```json
+{
+	"operationName": "SaveUpcomingPage",
+	"variables": {
+		"input": {
+			"whoText": "<p>Hi, I&#x27;m Nathan Clevenger</p>",
+			"whatText": "<p>We are working on a new exciting product...</p>",
+			"media": null,
+			"whyText": "<p>Get early access before we launch on Product Hunt...</p>",
+			"successText": "<p>Thank you for supporting our project!</p><p></p>",
+			"upcomingPageId": "196139"
+		},
+		"reloadVariant": false
+	},
+	"query": "mutation SaveUpcomingPage($input:UpdateUpcomingPageInput!$reloadVariant:Boolean!){response:updateUpcomingPage(input:$input){node{id ...UpcomingPageLayoutControlsForm variant(preferredKind:\"b\")@include(if:$reloadVariant){id __typename}__typename}errors{field messages __typename}__typename}}fragment UpcomingPageLayoutControlsForm on UpcomingPage{id accountId angellistUrl appStoreUrl availableTemplateNames canManageShipAb canPromoteUpcomingPage facebookUrl hiring name playStoreUrl privacyPolicyUrl seoDescription seoImageUuid seoTitle slug status subscriberCount successText tagline thumbnailUuid topicIds twitterUrl updatedAt webhookUrl websiteUrl widgetIntroMessage variants{id backgroundColor backgroundImageUuid brandColor kind logoUuid templateName thumbnailUuid unsplashBackgroundUrl whatText whoText whyText media{...Media __typename}__typename}...MetaTags __typename}fragment Media on Media{imageUuid mediaType originalWidth originalHeight metadata{url platform videoId __typename}__typename}fragment MetaTags on SEOInterface{id meta{canonicalUrl creator description image mobileAppUrl oembedUrl robots title type author authorUrl __typename}__typename}"
+}
+```
